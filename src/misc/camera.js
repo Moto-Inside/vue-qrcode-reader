@@ -63,7 +63,7 @@ const narrowDownFacingMode = async camera => {
       case "front":
         return { facingMode: { exact: "user" } };
       default:
-        return undefined;
+        return devices.find(d => d.deviceId === camera) ? { deviceId: { exact: camera } } : undefined;
     }
   }
 };
