@@ -1764,7 +1764,13 @@ var narrowDownFacingMode = /*#__PURE__*/function () {
             });
 
           case 22:
-            return _context.abrupt("return", undefined);
+            return _context.abrupt("return", devices.find(function (d) {
+              return d.deviceId === camera;
+            }) ? {
+              deviceId: {
+                exact: camera
+              }
+            } : undefined);
 
           case 23:
           case "end":
